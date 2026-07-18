@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen, ExternalLink, PlayCircle, ChevronDown, ChevronUp, Layers, Star, Zap, Target, TrendingUp, Code, GitBranch, Hash, Sigma, Search } from 'lucide-react';
+import { BookOpen, ExternalLink, PlayCircle, ChevronDown, ChevronUp, Layers, Star, Zap, Target, Code, GitBranch, Hash, Sigma, Search } from 'lucide-react';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Reading {

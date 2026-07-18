@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Award, CheckCircle, Clock, ExternalLink, RefreshCw } from 'lucide-react';
+import { CheckCircle, Clock, ExternalLink, RefreshCw } from 'lucide-react';
 
 export const Ladder: React.FC = () => {
   const { token } = useAuth();

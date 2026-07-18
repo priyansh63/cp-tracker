@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Award, BookOpen, Compass, LogOut, TrendingUp, Users } from 'lucide-react';
+import { Award, BookOpen, LogOut, TrendingUp, Users } from 'lucide-react';
 
 interface NavbarProps {
   activeTab: string;
@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                   style={{
                     background: isActive ? 'rgba(79, 172, 254, 0.1)' : 'transparent',
                     border: 'none',
-                    borderRadius: '8px',
+                    borderRadius: isActive ? '8px 8px 0 0' : '8px',
                     padding: '8px 16px',
                     color: isActive ? 'var(--primary)' : '#94a3b8',
                     cursor: 'pointer',
@@ -95,8 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, setActiveTab }) => {
                     gap: '8px',
                     fontSize: '0.95rem',
                     fontWeight: 600,
-                    borderBottom: isActive ? '2px solid var(--primary)' : '2px solid transparent',
-                    borderRadius: '8px 8px 0 0'
+                    borderBottom: isActive ? '2px solid var(--primary)' : '2px solid transparent'
                   }}
                 >
                   <Icon size={18} />

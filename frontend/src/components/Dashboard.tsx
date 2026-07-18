@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../context/AuthContext';
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
+   XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   BarChart, Bar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar,
-  ReferenceLine, Area, AreaChart, Legend
+  ReferenceLine, Area, AreaChart
 } from 'recharts';
-import { AlertTriangle, Award, CheckCircle, RefreshCw, Star, Zap, TrendingUp, Activity, Target, ExternalLink } from 'lucide-react';
+import { AlertTriangle, CheckCircle, RefreshCw, Star, TrendingUp, Activity, ExternalLink } from 'lucide-react';
 
 // ─── Rating → Color (Codeforces convention) ───────────────────────────────────
 const getRatingColor = (rating: number): string => {
@@ -19,15 +19,6 @@ const getRatingColor = (rating: number): string => {
   if (rating >= 1400) return '#77ddbb';   // Specialist
   if (rating >= 1200) return '#77ff77';   // Pupil
   return '#cccccc';                       // Newbie
-};
-
-const getRatingBandColor = (rating: number): string => {
-  if (rating >= 2400) return 'rgba(255,0,0,0.06)';
-  if (rating >= 1900) return 'rgba(170,0,170,0.06)';
-  if (rating >= 1600) return 'rgba(102,102,255,0.06)';
-  if (rating >= 1400) return 'rgba(0,180,130,0.06)';
-  if (rating >= 1200) return 'rgba(0,220,0,0.06)';
-  return 'rgba(150,150,150,0.06)';
 };
 
 // ─── Custom Tooltip for Rating Chart ─────────────────────────────────────────
