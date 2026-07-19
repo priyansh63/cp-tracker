@@ -28,7 +28,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const API_URL = import.meta.env.VITE_API_URL + '/api';
+  const API_URL = import.meta.env.VITE_API_URL ;
 
   useEffect(() => {
     const initializeAuth = async () => {
