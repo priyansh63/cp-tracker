@@ -20,9 +20,10 @@ app.use(cors({
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/cf', cfRoutes);
-app.use('/api/practice', ladderRoutes);
+// Routes
+app.use('/auth', authRoutes);
+app.use('/cf', cfRoutes);
+app.use('/practice', ladderRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
