@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Award, RefreshCw, Search } from 'lucide-react';
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const Leaderboard: React.FC = () => {
   const { token, user: currentUser } = useAuth();
@@ -12,7 +13,7 @@ export const Leaderboard: React.FC = () => {
   const fetchLeaderboard = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/cf/leaderboard', {
+      const res = await fetch(`${API_URL}/cf/leaderboard`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

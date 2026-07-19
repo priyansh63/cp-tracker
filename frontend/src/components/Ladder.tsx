@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { CheckCircle, Clock, ExternalLink, RefreshCw } from 'lucide-react';
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const Ladder: React.FC = () => {
   const { token } = useAuth();
@@ -13,7 +14,7 @@ export const Ladder: React.FC = () => {
   const fetchLadderProblems = async (ratingVal: number) => {
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/practice/ladder?rating=${ratingVal}`, {
+      const res = await fetch(`${API_URL}/practice/ladder?rating=${ratingVal}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -34,7 +35,7 @@ export const Ladder: React.FC = () => {
   const forceSyncCF = async () => {
     setSyncing(true);
     try {
-      const res = await fetch('http://localhost:5000/api/cf/sync', {
+      const res = await fetch(`${API_URL}/cf/sync`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

@@ -6,6 +6,7 @@ import {
   ReferenceLine, Area, AreaChart
 } from 'recharts';
 import { AlertTriangle, CheckCircle, RefreshCw, Star, TrendingUp, Activity, ExternalLink } from 'lucide-react';
+const API_URL = import.meta.env.VITE_API_URL;
 
 // ─── Rating → Color (Codeforces convention) ───────────────────────────────────
 const getRatingColor = (rating: number): string => {
@@ -125,8 +126,8 @@ export const Dashboard: React.FC = () => {
 
     try {
       const url = force
-        ? 'http://localhost:5000/api/cf/sync'
-        : 'http://localhost:5000/api/cf/dashboard';
+        ? `${API_URL}/cf/sync`
+        : `${API_URL}/cf/dashboard`;
 
       const res = await fetch(url, {
         method: force ? 'POST' : 'GET',
