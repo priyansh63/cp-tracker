@@ -14,7 +14,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-  origin: 'https://cp-tracker-smw5.vercel.app',
+  origin: 'https://cp-tracker-cjcs.vercel.app',
   credentials: true
 }));
 app.use(express.json());
